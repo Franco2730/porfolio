@@ -11,76 +11,37 @@ body {
 
 .desktop-icons {
   position: absolute;
-  top: 20px; /* Ajusta la posición vertical */
-  left: 20px; /* Ajusta la posición horizontal */
-  z-index: 2; /* Asegúrate de que los íconos estén por encima de la franja azul */
+  top: 20px;
+  left: 20px;
+  z-index: 2;
 }
 
-.desktop-icons img {
+.icon-wrapper {
+  display: inline-block;
+  position: absolute;
+}
+
+.icon-wrapper img {
   width: 55px;
   height: 55px;
-  cursor: pointer;
-  position: absolute;
   transition: transform 0.2s ease-out;
+  cursor: pointer;
 }
 
-
-
-.desktop-icons img:nth-child(1) {
-  top: 0;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(2) {
-  top: 70px;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(3) {
-  top: 140px;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(4) {
-  top: 210px;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(5) {
-  top: 280px;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(6) {
-  top: 350px;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(7) {
-  top: 420px;
-  left: 0;
-}
-
-.desktop-icons img:nth-child(8) {
-  top: 500px;
-  left: 0px;
-}
-
-/* Efecto hover */
-.desktop-icons img:hover {
-  transform: translateY(-5px) scale(1.1); /* Desplaza ligeramente hacia arriba y escala */
+.icon-wrapper img:hover {
+  transform: translateY(-5px) scale(1.1);
 }
 
 .start-button {
   position: absolute;
-  bottom: -7px; /* Ajusta la posición vertical del botón de inicio */
-  left: 0px; /* Ajusta la posición horizontal del botón de inicio */
+  bottom: -7px;
+  left: 0px;
   cursor: pointer;
-  z-index: 3; /* Asegúrate de que el botón de inicio esté por encima de la franja azul */
+  z-index: 3;
 }
 
 .start-button img {
-  width: 150px; /* Ajusta el tamaño del botón de inicio */
+  width: 150px;
 }
 
 .blue-bar {
@@ -88,16 +49,167 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40px; /* Ajusta la altura de la franja azul */
-  background-color: #236ad4; /* Color azul característico de Windows XP */
-  z-index: 1; /* Asegúrate de que la franja azul esté por detrás del botón de inicio */
+  height: 40px;
+  background-color: #236ad4;
+  z-index: 1;
 }
 
 .clock {
   position: absolute;
-  bottom: 9px; /* Ajusta la posición vertical del reloj */
-  right: 20px; /* Ajusta la posición horizontal del reloj */
-  color: white; /* Color del texto del reloj */
-  font-size: 18px; /* Tamaño de la fuente del reloj */
-  z-index: 2; /* Asegúrate de que el reloj esté por encima de la franja azul */
+  bottom: 5px;
+  right: 20px;
+  color: white;
+  font-size: 18px;
+  z-index: 2;
 }
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden; /* Evitar scroll lateral */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #236ad4;
+  padding: 10px;
+  color: white;
+}
+
+.windows-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.close-button {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.modal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-content h2 {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.form-modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-modal-content input,
+.form-modal-content textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-modal-content button {
+  padding: 10px;
+  background-color: #236ad4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-modal-content button:hover {
+  background-color: #1e5cb8;
+}
+
+.notification {
+  position: absolute;
+  bottom: 110px; /* Colocado justo encima de la barra azul */
+  left: 1100px;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: slide-up 1s forwards;
+  z-index: 4; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #236ad4;
+  width: 245%;
+  padding: 2px;
+  color: white;
+}
+
+.notification img {
+  width: 250%;
+  height: auto;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
