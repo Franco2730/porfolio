@@ -13,6 +13,7 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [infoWindowIsOpen, setInfoWindowIsOpen] = useState(false);
   const [formModalIsOpen, setFormModalIsOpen] = useState(false);
+  const [projectsModalIsOpen, setProjectsModalIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [userInteracted, setUserInteracted] = useState(false);
 
@@ -20,10 +21,9 @@ function App() {
 
   const [iconPositions, setIconPositions] = useState({
     yo: { x: 0, y: 0 },
-    formulario: { x: 0, y: 70 },
-    proyectos: { x: 0, y: 140 },
-    juego: { x: 0, y: 210 },
-    cancion: { x: 0, y: 280 }
+    formulario: { x: 0, y: 120 },
+    proyectos: { x: 120, y: 0 },
+    juego: { x: 120, y: 120 }
   });
 
   useEffect(() => {
@@ -86,6 +86,14 @@ function App() {
     setFormModalIsOpen(false);
   };
 
+  const openProjectsModal = () => {
+    setProjectsModalIsOpen(true);
+  };
+
+  const closeProjectsModal = () => {
+    setProjectsModalIsOpen(false);
+  };
+
   const handleDrop = (id, position) => {
     setIconPositions((prevPositions) => ({
       ...prevPositions,
@@ -132,21 +140,42 @@ function App() {
     <DndProvider backend={HTML5Backend}>
       <div>
         <div className="desktop-icons">
-          {Object.keys(iconPositions).map((key) => (
-            <DraggableIcon
-              key={key}
-              id={key}
-              src={`/iconos-escritorio/${key}.ico`}
-              alt={`Icono de ${key.charAt(0).toUpperCase() + key.slice(1)}`}
-              position={iconPositions[key]}
-              onDrop={handleDrop}
-              onDoubleClick={() => {
-                if (key === 'yo') openInfoWindow();
-                else if (key === 'formulario') openFormModal();
-                else openModal(key.charAt(0).toUpperCase() + key.slice(1));
-              }}
-            />
-          ))}
+          <DraggableIcon
+            id="yo"
+            src="/iconos-escritorio/yo.ico"
+            alt="Icono de Información Personal"
+            position={iconPositions.yo}
+            onDrop={handleDrop}
+            onDoubleClick={openInfoWindow}
+            name="Información Personal"
+          />
+          <DraggableIcon
+            id="formulario"
+            src="/iconos-escritorio/formulario.ico"
+            alt="Icono de Formulario de Contacto"
+            position={iconPositions.formulario}
+            onDrop={handleDrop}
+            onDoubleClick={openFormModal}
+            name="Formulario de Contacto"
+          />
+          <DraggableIcon
+            id="proyectos"
+            src="/iconos-escritorio/proyectos.ico"
+            alt="Icono de Proyectos"
+            position={iconPositions.proyectos}
+            onDrop={handleDrop}
+            onDoubleClick={openProjectsModal}
+            name="Proyectos"
+          />
+          <DraggableIcon
+            id="juego"
+            src="/iconos-escritorio/juego.ico"
+            alt="Icono de Juego"
+            position={iconPositions.juego}
+            onDrop={handleDrop}
+            onDoubleClick={() => window.open('https://black-jack-rosales.netlify.app/', '_blank')}
+            name="Juego"
+          />
         </div>
         <div className="start-button">
           <img src="/iconos-ventanas/inicio.png" alt="Botón de Inicio" onClick={() => openModal('Menú de Inicio')} />
@@ -189,6 +218,43 @@ function App() {
               <textarea placeholder="Mensaje" name="message" required></textarea>
               <button type="submit">Enviar</button>
             </form>
+          </div>
+        </Modal>
+        <Modal
+          isOpen={projectsModalIsOpen}
+          onRequestClose={closeProjectsModal}
+          contentLabel="Proyectos"
+          className="modal"
+          overlayClassName="modal-overlay"
+        >
+          <div className="modal-header">
+            <img src="/iconos-ventanas/windows.png" alt="Windows Icon" className="windows-icon" />
+            <button onClick={closeProjectsModal} className="close-button">X</button>
+          </div>
+          <div className="modal-content">
+            <h2>Mis proyectos</h2>
+            <ul>
+              <li>
+                <img src="/iconos-ventanas/miniatura1.png" alt="Proyecto 1" className="project-thumbnail" />
+                <a href="https://pf-deploy-gamma.vercel.app/" target="_blank" rel="noopener noreferrer">E-Commerce</a>
+              </li>
+              <li>
+                <img src="/iconos-ventanas/miniatura2.png" alt="Proyecto 2" className="project-thumbnail" />
+                <a href="https://citas-rosales.netlify.app" target="_blank" rel="noopener noreferrer">Agenda veterinaria</a>
+              </li>
+              <li>
+                <img src="/iconos-ventanas/miniatura3.png" alt="Proyecto 3" className="project-thumbnail" />
+                <a href="https://ice-cream-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Heladeria Mikky</a>
+              </li>
+              <li>
+                <img src="/iconos-ventanas/miniatura4.png" alt="Proyecto 4" className="project-thumbnail" />
+                <a href="https://garage-sale-emi-diego.netlify.app/" target="_blank" rel="noopener noreferrer">Venta de garage</a>
+              </li>
+              <li>
+                <img src="/iconos-ventanas/miniatura5.png" alt="Proyecto 5" className="project-thumbnail" />
+                <a href="https://resto-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Restaurante</a>
+              </li>
+            </ul>
           </div>
         </Modal>
         <InfoWindow isOpen={infoWindowIsOpen} onClose={closeInfoWindow} />

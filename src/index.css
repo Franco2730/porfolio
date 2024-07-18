@@ -17,19 +17,31 @@ body {
 }
 
 .icon-wrapper {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
 }
 
 .icon-wrapper img {
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   transition: transform 0.2s ease-out;
   cursor: pointer;
 }
 
 .icon-wrapper img:hover {
   transform: translateY(-5px) scale(1.1);
+}
+
+.icon-name {
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2px 5px;
+  border-radius: 3px;
 }
 
 .start-button {
@@ -117,6 +129,34 @@ body {
   margin-bottom: 20px;
 }
 
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-content li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-content a {
+  color: #236ad4;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+.project-thumbnail {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .form-modal-content {
   display: flex;
   flex-direction: column;
@@ -171,6 +211,18 @@ body {
   color: white;
 }
 
+.notification-close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
 .notification img {
   width: 250%;
   height: auto;
@@ -184,32 +236,3 @@ body {
     transform: translateY(0);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
