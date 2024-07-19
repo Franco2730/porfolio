@@ -4,7 +4,9 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import DraggableIcon from './DraggableIcon';
 import InfoWindow from './InfoWindow';
+import MusicPlayer from './MusicPlayer';
 import './index.css';
+import './MusicPlayer.css'; // Importa aquí tu CSS
 
 Modal.setAppElement('#root');
 
@@ -14,6 +16,7 @@ function App() {
   const [infoWindowIsOpen, setInfoWindowIsOpen] = useState(false);
   const [formModalIsOpen, setFormModalIsOpen] = useState(false);
   const [projectsModalIsOpen, setProjectsModalIsOpen] = useState(false);
+  const [musicPlayerIsOpen, setMusicPlayerIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [userInteracted, setUserInteracted] = useState(false);
 
@@ -21,9 +24,10 @@ function App() {
 
   const [iconPositions, setIconPositions] = useState({
     yo: { x: 0, y: 0 },
-    formulario: { x: 0, y: 120 },
-    proyectos: { x: 120, y: 0 },
-    juego: { x: 120, y: 120 }
+    formulario: { x: 0, y: 70 },
+    proyectos: { x: 0, y: 140 },
+    juego: { x: 0, y: 210 },
+    cancion: { x: 0, y: 280 }
   });
 
   useEffect(() => {
@@ -53,7 +57,7 @@ function App() {
     if (userInteracted) {
       const timer = setTimeout(() => {
         setShowNotification(true);
-        const audio = new Audio('/sounds/msn-buzz.mp3');
+        const audio = new Audio('/musica/msn-buzz.mp3');
         audio.play();
       }, 4000);
       return () => clearTimeout(timer);
@@ -92,6 +96,14 @@ function App() {
 
   const closeProjectsModal = () => {
     setProjectsModalIsOpen(false);
+  };
+
+  const openMusicPlayer = () => {
+    setMusicPlayerIsOpen(true);
+  };
+
+  const closeMusicPlayer = () => {
+    setMusicPlayerIsOpen(false);
   };
 
   const handleDrop = (id, position) => {
@@ -140,42 +152,25 @@ function App() {
     <DndProvider backend={HTML5Backend}>
       <div>
         <div className="desktop-icons">
-          <DraggableIcon
-            id="yo"
-            src="/iconos-escritorio/yo.ico"
-            alt="Icono de Información Personal"
-            position={iconPositions.yo}
-            onDrop={handleDrop}
-            onDoubleClick={openInfoWindow}
-            name="Información Personal"
-          />
-          <DraggableIcon
-            id="formulario"
-            src="/iconos-escritorio/formulario.ico"
-            alt="Icono de Formulario de Contacto"
-            position={iconPositions.formulario}
-            onDrop={handleDrop}
-            onDoubleClick={openFormModal}
-            name="Formulario de Contacto"
-          />
-          <DraggableIcon
-            id="proyectos"
-            src="/iconos-escritorio/proyectos.ico"
-            alt="Icono de Proyectos"
-            position={iconPositions.proyectos}
-            onDrop={handleDrop}
-            onDoubleClick={openProjectsModal}
-            name="Proyectos"
-          />
-          <DraggableIcon
-            id="juego"
-            src="/iconos-escritorio/juego.ico"
-            alt="Icono de Juego"
-            position={iconPositions.juego}
-            onDrop={handleDrop}
-            onDoubleClick={() => window.open('https://black-jack-rosales.netlify.app/', '_blank')}
-            name="Juego"
-          />
+          {Object.keys(iconPositions).map((key) => (
+            <DraggableIcon
+              key={key}
+              id={key}
+              src={`/iconos-escritorio/${key}.ico`}
+              alt={`Icono de ${key.charAt(0).toUpperCase() + key.slice(1)}`}
+              position={iconPositions[key]}
+              onDrop={handleDrop}
+              onDoubleClick={() => {
+                if (key === 'yo') openInfoWindow();
+                else if (key === 'formulario') openFormModal();
+                else if (key === 'proyectos') openProjectsModal();
+                else if (key === 'juego') window.open('https://black-jack-rosales.netlify.app/', '_blank');
+                else if (key === 'cancion') openMusicPlayer();
+                else openModal(key.charAt(0).toUpperCase() + key.slice(1));
+              }}
+              name={key.charAt(0).toUpperCase() + key.slice(1)}
+            />
+          ))}
         </div>
         <div className="start-button">
           <img src="/iconos-ventanas/inicio.png" alt="Botón de Inicio" onClick={() => openModal('Menú de Inicio')} />
@@ -258,6 +253,7 @@ function App() {
           </div>
         </Modal>
         <InfoWindow isOpen={infoWindowIsOpen} onClose={closeInfoWindow} />
+        {musicPlayerIsOpen && <MusicPlayer onClose={closeMusicPlayer} />}
         {showNotification && (
           <div className="notification">
             <button onClick={() => setShowNotification(false)} className="notification-close-button">X</button>
