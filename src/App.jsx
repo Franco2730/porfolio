@@ -250,7 +250,7 @@ function App() {
                 <a href="https://resto-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Restaurante</a>
               </li>
             </ul>
-          </div>
+          </div> 
         </Modal>
         <InfoWindow isOpen={infoWindowIsOpen} onClose={closeInfoWindow} />
         {musicPlayerIsOpen && <MusicPlayer onClose={closeMusicPlayer} />}
