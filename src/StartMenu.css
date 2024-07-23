@@ -1,0 +1,61 @@
+.start-menu {
+  position: absolute;
+  bottom: 0;
+  right: 67.5em;
+  width: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: slide-up 1s forwards;
+  z-index: 5; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.ventana-image {
+  width: 600px; /* Ajusta según sea necesario */
+  height: auto;
+  position: relative;
+}
+
+.logout-button {
+  position: absolute;
+  bottom: 5px; /* Ajusta según sea necesario */
+  left: 10px; /* Ajusta según sea necesario */
+  width: 96px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.shutdown-button {
+  position: absolute;
+  bottom: 50px; /* Ajusta según sea necesario */
+  right: 20px; /* Ajusta según sea necesario */
+  width: 80px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px; /* Ajusta según sea necesario */
+  left: 150px; /* Ajusta según sea necesario */
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import DraggableIcon from './DraggableIcon';
 import InfoWindow from './InfoWindow';
 import MusicPlayer from './MusicPlayer';
+import LandingPage from './LandingPage';
+import StartMenu from './StartMenu';
+import ShutdownPage from './ShutdownPage';
 import './index.css';
-import './MusicPlayer.css'; // Importa aquí tu CSS
+import './MusicPlayer.css';
 
 Modal.setAppElement('#root');
 
-function App() {
+function Home() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [infoWindowIsOpen, setInfoWindowIsOpen] = useState(false);
@@ -19,6 +23,7 @@ function App() {
   const [musicPlayerIsOpen, setMusicPlayerIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [userInteracted, setUserInteracted] = useState(false);
+  const [startMenuIsOpen, setStartMenuIsOpen] = useState(false);
 
   const [modalContent, setModalContent] = useState('');
 
@@ -148,6 +153,10 @@ function App() {
     }
   };
 
+  const handleStartButtonClick = () => {
+    setStartMenuIsOpen(!startMenuIsOpen);
+  };
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div>
@@ -173,7 +182,7 @@ function App() {
           ))}
         </div>
         <div className="start-button">
-          <img src="/iconos-ventanas/inicio.png" alt="Botón de Inicio" onClick={() => openModal('Menú de Inicio')} />
+          <img src="/iconos-ventanas/inicio.png" alt="Botón de Inicio" onClick={handleStartButtonClick} />
         </div>
         <div className="blue-bar"></div>
         <div className="clock">
@@ -250,7 +259,7 @@ function App() {
                 <a href="https://resto-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Restaurante</a>
               </li>
             </ul>
-          </div> 
+          </div>
         </Modal>
         <InfoWindow isOpen={infoWindowIsOpen} onClose={closeInfoWindow} />
         {musicPlayerIsOpen && <MusicPlayer onClose={closeMusicPlayer} />}
@@ -260,8 +269,27 @@ function App() {
             <img src="/iconos-ventanas/msn.png" alt="MSN Notification" />
           </div>
         )}
+        {startMenuIsOpen && <StartMenu onClose={() => setStartMenuIsOpen(false)} />}
       </div>
     </DndProvider>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/home"
+          element={
+            <Home />
+          }
+        />
+        <Route path="/shutdown" element={<ShutdownPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
 }
 

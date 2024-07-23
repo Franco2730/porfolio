@@ -2,21 +2,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import './MusicPlayer.css';
 
 const tracks = [
-    { title: "Guns N' Roses - Welcome To The Jungle", src: "/musica/Guns N' Roses - Welcome To The Jungle.mp3" },
-    { title: "Guns N' Roses - Estranged", src: "/musica/Guns N' Roses - Estranged.mp3" },
-    { title: "Bon Jovi - Wanted Dead Or Alive", src: '/musica/Bon Jovi - Wanted Dead Or Alive.mp3' },
-    { title: "Bon Jovi - Born To Be My Baby", src: '/musica/Bon Jovi - Born To Be My Baby.mp3' },
-    { title: "KISS - Crazy, Crazy Nights", src: '/musica/KISS - Crazy, Crazy Nights.mp3' },
-    { title: "Kiss - Heaven's On Fire", src: "/musica/Kiss - Heaven's On Fire.mp3" },
-    { title: "Alice Cooper - Poison", src: '/musica/Alice-Cooper-Poison.mp3' },
-    { title: "BLACK SABBATH - Paranoid", src: '/musica/BLACK SABBATH - Paranoid.mp3' },
-    { title: "Mötley Crüe - Kickstart My Heart", src: '/musica/Mötley Crüe - Kickstart My Heart.mp3' },
-    { title: "Queen - I want to break free", src: '/musica/Queen - I want to break free.mp3' },
-    { title: "Twisted Sister - I Wanna Rock", src: '/musica/Twisted Sister - I Wanna Rock.mp3' },
-    { title: "Twisted Sister - We're Not Gonna Take it", src: "/musica/Twisted Sister - We're Not Gonna Take it.mp3" },
-    { title: "Warren Zeiders - Outskirts of Heaven", src: '/musica/Warren Zeiders - Outskirts of Heaven.mp3' },
-    { title: "Trace Adkins - Ladies Love Country Boys", src: '/musica/Trace Adkins - Ladies Love Country Boys.mp3' },
-    { title: "Alan Jackson - Country Boy", src: '/musica/Alan Jackson - Country Boy.mp3' },
+    { title: 'Welcome To The Jungle - Guns N\' Roses', src: "/musica/Guns N' Roses - Welcome To The Jungle.mp3" },
+    { title: 'Estranged - Guns N\' Roses', src: "/musica/Guns N' Roses - Estranged.mp3" },
+    { title: 'Wanted Dead Or Alive - Bon Jovi', src: '/musica/Bon Jovi - Wanted Dead Or Alive.mp3' },
+    { title: 'Born To Be My Baby - Bon Jovi', src: '/musica/Bon Jovi - Born To Be My Baby.mp3' },
+    { title: 'Crazy, Crazy Nights - KISS', src: '/musica/KISS - Crazy, Crazy Nights.mp3' },
+    { title: 'Heaven\'s On Fire - Kiss', src: "/musica/Kiss - Heaven's On Fire.mp3" },
+    { title: 'Poison - Alice Cooper', src: '/musica/Alice-Cooper-Poison.mp3' },
+    { title: 'Paranoid - BLACK SABBATH', src: '/musica/BLACK SABBATH - Paranoid.mp3' },
+    { title: 'Kickstart My Heart - Mötley Crüe', src: '/musica/Mötley Crüe - Kickstart My Heart.mp3' },
+    { title: 'I want to break free - Queen', src: '/musica/Queen - I want to break free.mp3' },
+    { title: 'I Wanna Rock - Twisted Sister', src: '/musica/Twisted Sister - I Wanna Rock.mp3' },
+    { title: 'We\'re Not Gonna Take it - Twisted Sister', src: "/musica/Twisted Sister - We're Not Gonna Take it.mp3" },
+    { title: 'Outskirts of Heaven - Warren Zeiders', src: '/musica/Warren Zeiders - Outskirts of Heaven.mp3' },
+    { title: 'Ladies Love Country Boys - Trace Adkins', src: '/musica/Trace Adkins - Ladies Love Country Boys.mp3' },
+    { title: 'Country Boy - Alan Jackson', src: '/musica/Alan Jackson - Country Boy.mp3' },
 ];
 
 function MusicPlayer({ onClose }) {
