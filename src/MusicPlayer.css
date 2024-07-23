@@ -1,76 +1,75 @@
 .music-player {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #c3c7cb; /* Color de fondo similar a Windows XP */
-    border: 2px solid #000;
-    width: 350px;
-    height: 280px;
-    overflow: hidden;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-    border-radius: 5px;
-  }
-  
-  .music-player-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #236ad4; /* Azul de Windows XP */
-    padding: 5px 10px;
-    color: white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  
-  .windows-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .close-button {
-    background-color: red;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 3px;
-  }
-  
-  .music-player-content {
-    padding: 20px;
-    text-align: center;
-    flex-grow: 1;
-  }
-  
-  .music-player-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .music-player-controls button {
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #236ad4;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  
-  .music-player-controls button:hover {
-    background-color: #1e5cb8;
-  }
-  
-  .music-player h2 {
-    font-size: 16px;
-    color: #000;
-    margin-bottom: 10px;
-  }
-  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #c3c7cb; /* Color de fondo similar a Windows XP */
+  border: 2px solid #000;
+  width: 370px;
+  height: 280px;
+  overflow: hidden;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.music-player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #236ad4; /* Azul de Windows XP */
+  padding: 5px 10px;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.windows-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.close-button {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.music-player-content {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.music-player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.music-player-controls button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #236ad4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.music-player-controls button:hover {
+  background-color: #1e5cb8;
+}
+
+.music-player h2 {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 10px;
+}

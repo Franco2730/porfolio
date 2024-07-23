@@ -2,21 +2,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import './MusicPlayer.css';
 
 const tracks = [
-    { title: 'Cancion 1', src: "/musica/Guns N' Roses - Welcome To The Jungle.mp3" },
-    { title: 'Cancion 2', src: "/musica/Guns N' Roses - Estranged.mp3" },
-    { title: 'Cancion 3', src: '/musica/Bon Jovi - Wanted Dead Or Alive.mp3' },
-    { title: 'Cancion 4', src: '/musica/Bon Jovi - Born To Be My Baby.mp3' },
-    { title: 'Cancion 5', src: '/musica/KISS - Crazy, Crazy Nights.mp3' },
-    { title: 'Cancion 6', src: "/musica/Kiss - Heaven's On Fire.mp3" },
-    { title: 'Cancion 7', src: '/musica/Alice-Cooper-Poison.mp3' },
-    { title: 'Cancion 8', src: '/musica/BLACK SABBATH - Paranoid.mp3' },
-    { title: 'Cancion 9', src: '/musica/Mötley Crüe - Kickstart My Heart.mp3' },
-    { title: 'Cancion 10', src: '/musica/Queen - I want to break free.mp3' },
-    { title: 'Cancion 11', src: '/musica/Twisted Sister - I Wanna Rock.mp3' },
-    { title: 'Cancion 12', src: "/musica/Twisted Sister - We're Not Gonna Take it.mp3" },
-    { title: 'Cancion 13', src: '/musica/Warren Zeiders - Outskirts of Heaven.mp3' },
-    { title: 'Cancion 14', src: '/musica/Trace Adkins - Ladies Love Country Boys.mp3' },
-    { title: 'Cancion 15', src: '/musica/Alan Jackson - Country Boy.mp3' },
+    { title: "Guns N' Roses - Welcome To The Jungle", src: "/musica/Guns N' Roses - Welcome To The Jungle.mp3" },
+    { title: "Guns N' Roses - Estranged", src: "/musica/Guns N' Roses - Estranged.mp3" },
+    { title: "Bon Jovi - Wanted Dead Or Alive", src: '/musica/Bon Jovi - Wanted Dead Or Alive.mp3' },
+    { title: "Bon Jovi - Born To Be My Baby", src: '/musica/Bon Jovi - Born To Be My Baby.mp3' },
+    { title: "KISS - Crazy, Crazy Nights", src: '/musica/KISS - Crazy, Crazy Nights.mp3' },
+    { title: "Kiss - Heaven's On Fire", src: "/musica/Kiss - Heaven's On Fire.mp3" },
+    { title: "Alice Cooper - Poison", src: '/musica/Alice-Cooper-Poison.mp3' },
+    { title: "BLACK SABBATH - Paranoid", src: '/musica/BLACK SABBATH - Paranoid.mp3' },
+    { title: "Mötley Crüe - Kickstart My Heart", src: '/musica/Mötley Crüe - Kickstart My Heart.mp3' },
+    { title: "Queen - I want to break free", src: '/musica/Queen - I want to break free.mp3' },
+    { title: "Twisted Sister - I Wanna Rock", src: '/musica/Twisted Sister - I Wanna Rock.mp3' },
+    { title: "Twisted Sister - We're Not Gonna Take it", src: "/musica/Twisted Sister - We're Not Gonna Take it.mp3" },
+    { title: "Warren Zeiders - Outskirts of Heaven", src: '/musica/Warren Zeiders - Outskirts of Heaven.mp3' },
+    { title: "Trace Adkins - Ladies Love Country Boys", src: '/musica/Trace Adkins - Ladies Love Country Boys.mp3' },
+    { title: "Alan Jackson - Country Boy", src: '/musica/Alan Jackson - Country Boy.mp3' },
 ];
 
 function MusicPlayer({ onClose }) {
