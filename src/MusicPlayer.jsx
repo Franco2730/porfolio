@@ -54,7 +54,7 @@ function MusicPlayer({ onClose }) {
     <div className="music-player">
       <div className="music-player-header">
         <img src="/iconos-ventanas/windows.png" alt="Windows Icon" className="windows-icon" />
-        <button onClick={onClose} className="close-button">X</button>
+        <button onClick={onClose} id="close-button">X</button>
       </div>
       <div className="music-player-content">
         <h2>Reproductor de Música</h2>

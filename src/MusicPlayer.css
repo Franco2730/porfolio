@@ -24,26 +24,28 @@
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  position: relative; /* Necesario para posicionar la cruz */
+  position: relative; /* Asegúrate de que sea relativo para el botón */
 }
-
 
 .windows-icon {
   width: 20px;
   height: 20px;
 }
 
-.close-button {
+#close-button {
   position: absolute; /* Permite posicionar la cruz */
   top: 5px; /* Ajusta la distancia desde el borde superior */
   right: 5px; /* Ajusta la distancia desde el borde derecho */
   background-color: red;
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 12px; /* Ajusta el tamaño del texto */
   cursor: pointer;
-  padding: 3px 6px;
-  border-radius: 2px;
+  padding: 2px 4px; /* Ajusta el tamaño del botón */
+  line-height: 1; /* Asegura que el contenido esté centrado */
+  width: 20px; /* Ajusta el ancho del botón */
+  height: 20px; /* Ajusta la altura del botón */
+  text-align: center; /* Centra el texto */
 }
 
 .music-player-content {

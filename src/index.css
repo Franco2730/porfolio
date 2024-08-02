@@ -110,17 +110,92 @@ body {
   height: 20px;
 }
 
-.close-button {
+.modal-header .form-close-button {
   position: absolute; /* Permite posicionar la cruz */
   top: 5px; /* Ajusta la distancia desde el borde superior */
   right: 5px; /* Ajusta la distancia desde el borde derecho */
   background-color: red;
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 12px; /* Ajusta el tamaño del texto */
   cursor: pointer;
-  padding: 5px;
+  padding: 2px 4px; /* Ajusta el tamaño del botón */
+  line-height: 1; /* Asegura que el contenido esté centrado */
+  width: 20px; /* Ajusta el ancho del botón */
+  height: 20px; /* Ajusta la altura del botón */
+  text-align: center; /* Centra el texto */
 }
+
+.modal-header .projects-close-button {
+  position: absolute; /* Permite posicionar la cruz */
+  top: 5px; /* Ajusta la distancia desde el borde superior */
+  right: 5px; /* Ajusta la distancia desde el borde derecho */
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 12px; /* Ajusta el tamaño del texto */
+  cursor: pointer;
+  padding: 2px 4px; /* Ajusta el tamaño del botón */
+  line-height: 1; /* Asegura que el contenido esté centrado */
+  width: 20px; /* Ajusta el ancho del botón */
+  height: 20px; /* Ajusta la altura del botón */
+  text-align: center; /* Centra el texto */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  color: #236ad4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.modal-header .projects-close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+
 
 .modal-content {
   padding: 20px;
@@ -201,28 +276,32 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #236ad4;
-  width: 100%;
-  padding: 5px;
+  width: 245%;
+  padding: 2px;
   color: white;
-  position: relative; /* Necesario para posicionar la cruz */
 }
 
-.notification-close-button {
+#notification-close-button {
   position: absolute; /* Permite posicionar la cruz */
-  top: 5px; /* Ajusta la distancia desde el borde superior */
-  right: 5px; /* Ajusta la distancia desde el borde derecho */
-  background-color: red;
+  top: -235px; /* Ajusta la distancia desde el borde superior */
+  right: -135px; /* Ajusta la distancia desde el borde derecho */
+  background-color: rgba(255, 0, 0, 0.164);
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 12px; /* Ajusta el tamaño del texto */
   cursor: pointer;
-  padding: 5px;
+  padding: 2px 4px; /* Ajusta el tamaño del botón */
+  line-height: 1; /* Asegura que el contenido esté centrado */
+  width: 65px; /* Ajusta el ancho del botón */
+  height: 25px; /* Ajusta la altura del botón */
+  text-align: center; /* Centra el texto */
 }
 
 .notification img {
   width: 250%;
   height: auto;
 }
+
 
 .project-thumbnail {
   width: 150px; /* Ajusta el tamaño según tus necesidades */
