@@ -38,18 +38,6 @@
   cursor: pointer;
 }
 
-.shutdown-visible-button {
-  position: absolute;
-  top: 410px; /* Ajusta según sea necesario */
-  left: 110px; /* Ajusta según sea necesario */
-  width: 80px;
-  height: 30px;
-  background: rgba(0, 0, 0, 0); /* Para que puedas verlo */
-  color: white; /* Texto en blanco */
-  border: none;
-  cursor: pointer;
-}
-
 .close-button {
   position: absolute;
   top: 15px; /* Ajusta según sea necesario */
@@ -69,5 +57,41 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  .start-menu {
+    bottom: 0;
+    right: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    justify-content: center;
+  }
+
+  .ventana-image {
+    width: 110%; /* Ajusta el ancho para pantallas pequeñas */
+    height: auto;
+  }
+
+  .logout-button {
+    bottom: 5px; /* Ajusta según sea necesario */
+    left: 5px; /* Ajusta según sea necesario */
+    width: 80px; /* Ajusta el tamaño según sea necesario */
+    height: 30px; /* Ajusta el tamaño según sea necesario */
+  }
+
+  .shutdown-button {
+    bottom: 35px; /* Ajusta según sea necesario */
+    right: 5px; /* Ajusta según sea necesario */
+    width: 70px; /* Ajusta el tamaño según sea necesario */
+    height: 25px; /* Ajusta el tamaño según sea necesario */
+  }
+
+  .close-button {
+    top: 10px; /* Ajusta según sea necesario */
+    left: 120px; /* Ajusta según sea necesario */
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    padding: 3px; /* Ajusta el tamaño del botón */
   }
 }

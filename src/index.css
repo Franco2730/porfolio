@@ -15,7 +15,7 @@ body {
   left: 25px;
   z-index: 2;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 0px; /* Reduce el espacio entre los íconos */
 }
 
@@ -42,7 +42,7 @@ body {
   font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
   margin-top: 5px; /* Reduce el espacio entre el icono y el texto */
   background-color: rgba(0, 0, 0, 0.527);
-  border-radius: 50px
+  border-radius: 50px;
 }
 
 .start-button {
@@ -126,22 +126,6 @@ body {
   text-align: center; /* Centra el texto */
 }
 
-.modal-header .projects-close-button {
-  position: absolute; /* Permite posicionar la cruz */
-  top: 5px; /* Ajusta la distancia desde el borde superior */
-  right: 5px; /* Ajusta la distancia desde el borde derecho */
-  background-color: red;
-  color: white;
-  border: none;
-  font-size: 12px; /* Ajusta el tamaño del texto */
-  cursor: pointer;
-  padding: 2px 4px; /* Ajusta el tamaño del botón */
-  line-height: 1; /* Asegura que el contenido esté centrado */
-  width: 20px; /* Ajusta el ancho del botón */
-  height: 20px; /* Ajusta la altura del botón */
-  text-align: center; /* Centra el texto */
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -180,22 +164,20 @@ body {
 }
 
 .modal-header .projects-close-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  position: absolute; /* Permite posicionar la cruz */
+  top: 5px; /* Ajusta la distancia desde el borde superior */
+  right: 5px; /* Ajusta la distancia desde el borde derecho */
   background-color: red;
   color: white;
   border: none;
-  font-size: 12px;
+  font-size: 12px; /* Ajusta el tamaño del texto */
   cursor: pointer;
-  padding: 2px 4px;
-  line-height: 1;
-  width: 20px;
-  height: 20px;
-  text-align: center;
+  padding: 2px 4px; /* Ajusta el tamaño del botón */
+  line-height: 1; /* Asegura que el contenido esté centrado */
+  width: 20px; /* Ajusta el ancho del botón */
+  height: 20px; /* Ajusta la altura del botón */
+  text-align: center; /* Centra el texto */
 }
-
-
 
 .modal-content {
   padding: 20px;
@@ -302,7 +284,6 @@ body {
   height: auto;
 }
 
-
 .project-thumbnail {
   width: 150px; /* Ajusta el tamaño según tus necesidades */
   height: auto; /* Mantiene la proporción de la imagen */
@@ -339,22 +320,22 @@ body {
   text-decoration: underline;
 }
 
-@keyframes slide-up {
-  0% {
-    transform: translateY(150%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.contact-icons {
+  position: absolute;
+  bottom: 0px; /* Valor predeterminado */
+  left: 170px; /* Valor predeterminado */
+  display: flex;
+  gap: 40px;
+  z-index: 3;
+  justify-content: space-between; /* Distribuye los iconos de manera uniforme */
 }
 
-.contact-icons {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  top: 640px;
-  left: 170px; /* Ajusta según sea necesario */
-  z-index: 3;
+
+.contact-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .contact-icon {
@@ -368,3 +349,129 @@ body {
 .contact-icon:hover {
   transform: scale(1.1);
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .desktop-icons {
+    top: 20px;
+    left: 20px;
+  }
+
+  .icon-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-name {
+    font-size: 10px;
+  }
+
+  .start-button img {
+    width: 80px;
+  }
+
+  .clock {
+    font-size: 12px;
+  }
+
+  .modal {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 992px) {
+  .desktop-icons {
+    top: 15px;
+    left: 15px;
+  }
+
+  .icon-wrapper img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .icon-name {
+    font-size: 9px;
+  }
+
+  .start-button img {
+    width: 70px;
+  }
+
+  .clock {
+    font-size: 10px;
+  }
+
+  .modal {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-icons {
+    top: 10px;
+    left: 10px;
+  }
+
+  .icon-wrapper img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-name {
+    font-size: 8px;
+  }
+
+  .start-button img {
+    width: 60px;
+  }
+
+  .clock {
+    font-size: 8px;
+  }
+
+  .modal {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 576px) {
+  .desktop-icons {
+    top: 180px;
+    left: 20px;
+  }
+
+  .icon-wrapper img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .icon-name {
+    font-size: 20px;
+  }
+
+  .start-button img {
+    width: 150px;
+    bottom: 10px;
+  }
+
+  .clock {
+    font-size: 15px;
+    right: 5px;
+    bottom: 10px;
+  }
+
+  .contact-icons {
+    bottom: 3px; /* Ajusta según sea necesario */
+    left: 150px; /* Ajusta según sea necesario */
+    gap: 1px; /* Ajusta el espacio entre los iconos */
+    justify-content: space-around; /* Asegura que se distribuyan de manera uniforme */
+    width: calc(70% - 90px); /* Ajusta el ancho según sea necesario */
+  }
+
+  .contact-icons img {
+    width: 30px; /* Ajusta el tamaño según sea necesario */
+    height: 30px;
+  }
+}
+

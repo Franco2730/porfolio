@@ -193,60 +193,24 @@ function Home() {
             />
           ))}
         </div>
+
         <div className="start-button">
-          <img
-            src="/iconos-ventanas/inicio.png"
-            alt="Botón de Inicio"
-            onClick={handleStartButtonClick}
-          />
+          <img src="/iconos-ventanas/inicio.png" alt="Botón de Inicio" onClick={handleStartButtonClick} />
         </div>
         <div className="contact-icons">
-          <img
-            src="/iconos-contacto/linkedin.png"
-            alt="LinkedIn"
-            className="contact-icon"
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/franco2730/", "_blank")
-            }
-          />
-          <img
-            src="/iconos-contacto/whats.png"
-            alt="WhatsApp"
-            className="contact-icon"
-            onClick={() => window.open("https://wa.me/5492615681142", "_blank")}
-          />
-          <img
-            src="/iconos-contacto/github.png"
-            alt="GitHub"
-            className="contact-icon"
-            onClick={() =>
-              window.open("https://github.com/Franco2730", "_blank")
-            }
-          />
-          <img
-            src="/iconos-contacto/email.png"
-            alt="Email"
-            className="contact-icon"
-            onClick={() =>
-              (window.location.href = "mailto:dev.rosales2130@gmail.com")
-            }
-          />
-          <img
-            src="/iconos-contacto/descargar.png"
-            alt="Descargar CV"
-            className="contact-icon"
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/cv.pdf";
-              link.download = "cv.pdf";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-          />
+          <img src="/iconos-contacto/linkedin.png" alt="LinkedIn" onClick={() => window.open('https://www.linkedin.com/in/franco2730/', '_blank')} />
+          <img src="/iconos-contacto/whats.png" alt="WhatsApp" onClick={() => window.open('https://wa.me/5492615681142', '_blank')} />
+          <img src="/iconos-contacto/github.png" alt="GitHub" onClick={() => window.open('https://github.com/Franco2730', '_blank')} />
+          <img src="/iconos-contacto/email.png" alt="Email" onClick={() => window.location.href = 'mailto:dev.rosales2130@gmail.com'} />
+          <a href="/public/Curriculum Vitae Franco.pdf" download>
+            <img src="/iconos-contacto/descargar.png" alt="Descargar CV" />
+          </a>
         </div>
         <div className="blue-bar"></div>
-        <div className="clock">{time}</div>
+        <div className="clock">
+          {time}
+        </div>
+
 
         <Modal
           isOpen={modalIsOpen}
