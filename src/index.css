@@ -11,25 +11,38 @@ body {
 
 .desktop-icons {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 25px;
+  left: 25px;
   z-index: 2;
+  display: flex;
+  flex-direction:column;
+  gap: 0px; /* Reduce el espacio entre los íconos */
 }
 
 .icon-wrapper {
   display: inline-block;
-  position: absolute;
+  position: relative;
+  text-align: center; /* Centra el texto debajo del icono */
 }
 
 .icon-wrapper img {
-  width: 55px;
-  height: 55px;
+  width: 70px;
+  height: 70px;
   transition: transform 0.2s ease-out;
   cursor: pointer;
 }
 
 .icon-wrapper img:hover {
   transform: translateY(-5px) scale(1.1);
+}
+
+.icon-name {
+  display: block;
+  color: white; /* Cambia el color del texto a blanco */
+  font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
+  margin-top: 5px; /* Reduce el espacio entre el icono y el texto */
+  background-color: rgba(0, 0, 0, 0.527);
+  border-radius: 50px
 }
 
 .start-button {
@@ -89,6 +102,7 @@ body {
   background-color: #236ad4;
   padding: 10px;
   color: white;
+  position: relative; /* Necesario para posicionar la cruz */
 }
 
 .windows-icon {
@@ -97,6 +111,9 @@ body {
 }
 
 .close-button {
+  position: absolute; /* Permite posicionar la cruz */
+  top: 5px; /* Ajusta la distancia desde el borde superior */
+  right: 5px; /* Ajusta la distancia desde el borde derecho */
   background-color: red;
   color: white;
   border: none;
@@ -184,15 +201,16 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #236ad4;
-  width: 245%;
-  padding: 2px;
+  width: 100%;
+  padding: 5px;
   color: white;
+  position: relative; /* Necesario para posicionar la cruz */
 }
 
 .notification-close-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  position: absolute; /* Permite posicionar la cruz */
+  top: 5px; /* Ajusta la distancia desde el borde superior */
+  right: 5px; /* Ajusta la distancia desde el borde derecho */
   background-color: red;
   color: white;
   border: none;
@@ -206,6 +224,42 @@ body {
   height: auto;
 }
 
+.project-thumbnail {
+  width: 150px; /* Ajusta el tamaño según tus necesidades */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border: 1px solid #ccc; /* Añade un borde a las imágenes */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: transform 0.2s ease-out; /* Efecto de transición al pasar el mouse */
+  display: block; /* Asegura que la imagen sea un bloque */
+  margin-bottom: 5px; /* Añade espacio entre la imagen y el texto */
+}
+
+.project-thumbnail:hover {
+  transform: translateY(-5px) scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.projects-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-item a {
+  color: #236ad4;
+  text-decoration: none;
+  margin-top: 5px; /* Espacio entre la imagen y el texto */
+}
+
+.project-item a:hover {
+  text-decoration: underline;
+}
+
 @keyframes slide-up {
   0% {
     transform: translateY(150%);
@@ -213,4 +267,25 @@ body {
   100% {
     transform: translateY(0);
   }
+}
+
+.contact-icons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  top: 640px;
+  left: 170px; /* Ajusta según sea necesario */
+  z-index: 3;
+}
+
+.contact-icon {
+  width: 30px; /* Ajusta el tamaño según sea necesario */
+  height: 30px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
 }

@@ -38,6 +38,18 @@
   cursor: pointer;
 }
 
+.shutdown-visible-button {
+  position: absolute;
+  top: 410px; /* Ajusta según sea necesario */
+  left: 110px; /* Ajusta según sea necesario */
+  width: 80px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0); /* Para que puedas verlo */
+  color: white; /* Texto en blanco */
+  border: none;
+  cursor: pointer;
+}
+
 .close-button {
   position: absolute;
   top: 15px; /* Ajusta según sea necesario */

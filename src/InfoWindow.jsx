@@ -18,7 +18,6 @@ const InfoWindow = ({ isOpen, onClose }) => {
           </div>
           <div className="info-window-right">
             <img src="/iconos-escritorio/video.ico" alt="Video" className="info-window-icon" />
-            <img src="/iconos-escritorio/cursos.ico" alt="Cursos" className="info-window-icon" />
             <img src="/iconos-escritorio/ubicacion.ico" alt="Ubicación" className="info-window-icon" />
           </div>
         </div>

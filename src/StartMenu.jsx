@@ -22,6 +22,7 @@ const StartMenu = ({ onClose }) => {
       <img src="/iconos-ventanas/ventana.png" alt="Ventana" className="ventana-image" />
       <button className="logout-button" onClick={handleLogout}></button>
       <button className="shutdown-button" onClick={handleShutdown}></button>
+      <button className="shutdown-visible-button" onClick={handleShutdown}></button>
       <button className="close-button" onClick={onClose}>X</button>
     </div>
   );

@@ -31,8 +31,8 @@ function Home() {
     yo: { x: 0, y: 0 },
     formulario: { x: 0, y: 70 },
     proyectos: { x: 0, y: 140 },
-    juego: { x: 0, y: 210 },
-    cancion: { x: 0, y: 280 }
+    juego: { x: 100, y: -310 },
+    cancion: { x: 200, y: -415 }
   });
 
   useEffect(() => {
@@ -184,10 +184,27 @@ function Home() {
         <div className="start-button">
           <img src="/iconos-ventanas/inicio.png" alt="Botón de Inicio" onClick={handleStartButtonClick} />
         </div>
+        <div className="contact-icons">
+          <img src="/iconos-contacto/linkedin.png" alt="LinkedIn" className="contact-icon" onClick={() => window.open('https://www.linkedin.com/in/franco2730/', '_blank')} />
+          <img src="/iconos-contacto/whats.png" alt="WhatsApp" className="contact-icon" onClick={() => window.open('https://wa.me/5492615681142', '_blank')} />
+          <img src="/iconos-contacto/github.png" alt="GitHub" className="contact-icon" onClick={() => window.open('https://github.com/Franco2730', '_blank')} />
+          <img src="/iconos-contacto/email.png" alt="Email" className="contact-icon" onClick={() => window.location.href = 'mailto:dev.rosales2130@gmail.com'} />
+          <img src="/iconos-contacto/descargar.png" alt="Descargar CV" className="contact-icon" onClick={() => {
+            const link = document.createElement('a');
+            link.href = '/cv.pdf';
+            link.download = 'cv.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }} />
+
+        </div>
         <div className="blue-bar"></div>
         <div className="clock">
           {time}
         </div>
+
+
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -237,30 +254,31 @@ function Home() {
           </div>
           <div className="modal-content">
             <h2>Mis proyectos</h2>
-            <ul>
-              <li>
-                <img src="/iconos-ventanas/miniatura1.png" alt="Proyecto 1" className="project-thumbnail" />
+            <ul className="projects-list">
+              <li className="project-item">
+                <img src="../public/commerce.jpg" alt="Proyecto 1" className="project-thumbnail" />
                 <a href="https://pf-deploy-gamma.vercel.app/" target="_blank" rel="noopener noreferrer">E-Commerce</a>
               </li>
-              <li>
-                <img src="/iconos-ventanas/miniatura2.png" alt="Proyecto 2" className="project-thumbnail" />
+              <li className="project-item">
+                <img src="../public/vete.jpg" alt="Proyecto 2" className="project-thumbnail" />
                 <a href="https://citas-rosales.netlify.app" target="_blank" rel="noopener noreferrer">Agenda veterinaria</a>
               </li>
-              <li>
-                <img src="/iconos-ventanas/miniatura3.png" alt="Proyecto 3" className="project-thumbnail" />
-                <a href="https://ice-cream-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Heladeria Mikky</a>
+              <li className="project-item">
+                <img src="../public/helado.jpg" alt="Proyecto 3" className="project-thumbnail" />
+                <a href="https://ice-cream-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Heladería Mikky</a>
               </li>
-              <li>
-                <img src="/iconos-ventanas/miniatura4.png" alt="Proyecto 4" className="project-thumbnail" />
+              <li className="project-item">
+                <img src="../public/garage.jpg" alt="Proyecto 4" className="project-thumbnail" />
                 <a href="https://garage-sale-emi-diego.netlify.app/" target="_blank" rel="noopener noreferrer">Venta de garage</a>
               </li>
-              <li>
-                <img src="/iconos-ventanas/miniatura5.png" alt="Proyecto 5" className="project-thumbnail" />
+              <li className="project-item">
+                <img src="../public/hambur.jpg" alt="Proyecto 5" className="project-thumbnail" />
                 <a href="https://resto-rosales.netlify.app/" target="_blank" rel="noopener noreferrer">Restaurante</a>
               </li>
             </ul>
           </div>
         </Modal>
+
         <InfoWindow isOpen={infoWindowIsOpen} onClose={closeInfoWindow} />
         {musicPlayerIsOpen && <MusicPlayer onClose={closeMusicPlayer} />}
         {showNotification && (
