@@ -1,8 +1,8 @@
 .start-menu {
   position: absolute;
-  bottom: 0;
-  right: 67.5em;
-  width: 0%;
+  bottom: 40px; /* Justo por encima de la barra azul */
+  left: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -41,7 +41,7 @@
 .close-button {
   position: absolute;
   top: 15px; /* Ajusta según sea necesario */
-  left: 150px; /* Ajusta según sea necesario */
+  right: 15px; /* Ajusta según sea necesario */
   background-color: red;
   color: white;
   border: none;
@@ -63,35 +63,37 @@
 /* Media Queries */
 @media (max-width: 576px) {
   .start-menu {
-    bottom: 0;
-    right: 0;
-    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    bottom: 10;
+    left: 0;
+    width: 90%; /* Asegura que ocupe todo el ancho de la pantalla */
     justify-content: center;
+    align-items: flex-end;
   }
 
   .ventana-image {
-    width: 110%; /* Ajusta el ancho para pantallas pequeñas */
+    width: 100%; /* Ajusta para mantener proporciones en pantallas pequeñas */
     height: auto;
   }
 
   .logout-button {
-    bottom: 5px; /* Ajusta según sea necesario */
+    bottom: 25px; /* Ajusta según sea necesario */
     left: 5px; /* Ajusta según sea necesario */
     width: 80px; /* Ajusta el tamaño según sea necesario */
     height: 30px; /* Ajusta el tamaño según sea necesario */
   }
 
   .shutdown-button {
-    bottom: 35px; /* Ajusta según sea necesario */
+    bottom: 50px; /* Ajusta según sea necesario */
     right: 5px; /* Ajusta según sea necesario */
     width: 70px; /* Ajusta el tamaño según sea necesario */
     height: 25px; /* Ajusta el tamaño según sea necesario */
   }
 
-  .close-button {
+  /* el siguiente codigo es del boton de la ventana emergente del boton inicio */
+  .close-button { 
     top: 10px; /* Ajusta según sea necesario */
-    left: 120px; /* Ajusta según sea necesario */
+    right: 15px; /* Ajusta según sea necesario */
     font-size: 14px; /* Ajusta el tamaño del texto */
-    padding: 3px; /* Ajusta el tamaño del botón */
+    padding: 10px; /* Ajusta el tamaño del botón */
   }
 }

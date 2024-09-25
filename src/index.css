@@ -69,10 +69,10 @@ body {
 
 .clock {
   position: absolute;
-  bottom: 5px;
-  right: 20px;
+  bottom: 4px;
+  right: -42px;
   color: white;
-  font-size: 18px;
+  font-size: 35px;
   z-index: 2;
 }
 
@@ -350,84 +350,30 @@ body {
   transform: scale(1.1);
 }
 
-/* Media Queries */
-@media (max-width: 1200px) {
-  .desktop-icons {
-    top: 20px;
-    left: 20px;
-  }
-
-  .icon-wrapper img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .icon-name {
-    font-size: 10px;
-  }
-
-  .start-button img {
-    width: 80px;
-  }
-
-  .clock {
-    font-size: 12px;
-  }
-
-  .modal {
-    max-width: 85%;
-  }
-}
-
-@media (max-width: 992px) {
-  .desktop-icons {
-    top: 15px;
-    left: 15px;
-  }
-
-  .icon-wrapper img {
-    width: 45px;
-    height: 45px;
-  }
-
-  .icon-name {
-    font-size: 9px;
-  }
-
-  .start-button img {
-    width: 70px;
-  }
-
-  .clock {
-    font-size: 10px;
-  }
-
-  .modal {
-    max-width: 80%;
-  }
-}
 
 @media (max-width: 768px) {
   .desktop-icons {
-    top: 10px;
-    left: 10px;
+    top: 50px;
+    left: 40px;
   }
 
   .icon-wrapper img {
-    width: 40px;
-    height: 40px;
+    width: 75px;
+    height: 75px;
   }
 
   .icon-name {
-    font-size: 8px;
+    font-size: 30px;
   }
 
   .start-button img {
-    width: 60px;
+    width: 150px;
   }
 
   .clock {
-    font-size: 8px;
+    font-size: 30px;
+    right: -35px;
+    bottom: 5px;
   }
 
   .modal {
@@ -437,13 +383,13 @@ body {
 
 @media (max-width: 576px) {
   .desktop-icons {
-    top: 180px;
+    top: 30px;
     left: 20px;
   }
 
   .icon-wrapper img {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
   }
 
   .icon-name {
@@ -456,8 +402,8 @@ body {
   }
 
   .clock {
-    font-size: 15px;
-    right: 5px;
+    font-size: 20px;
+    right: -23px;
     bottom: 10px;
   }
 

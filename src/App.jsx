@@ -36,9 +36,10 @@ function Home() {
     yo: { x: 0, y: 0 },
     formulario: { x: 0, y: 70 },
     proyectos: { x: 0, y: 140 },
-    juego: { x: 100, y: -310 },
-    cancion: { x: 200, y: -415 },
+    cancion: { x: 0, y: 210 },
+    juego: { x: 0, y: 280 }
   });
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -388,6 +389,10 @@ function Home() {
     </DndProvider>
   );
 }
+
+
+
+
 
 function App() {
   return (
